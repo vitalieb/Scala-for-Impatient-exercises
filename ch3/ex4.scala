@@ -3,18 +3,17 @@
 //order.
 
 def sortArray(originalArray: Array[Int]) = {
-  var arrayOfPositives: Array[Int] =
-    (for (i <- originalArray.indices if originalArray(i)>=0) yield originalArray(i)).toArray
+  val arrayOfPositives =
+    (for (i <- originalArray.indices if originalArray(i) >= 0) yield originalArray(i)).toArray
 
+  val arrayOfNegatives =
+    (for (i <- originalArray.indices if originalArray(i) < 0) yield originalArray(i)).toArray
 
-  var arrayOfNegatives: Array[Int] =
-    (for (i <- originalArray.indices if originalArray(i)<0) yield originalArray(i)).toArray
-
-  var finalArray:Array[Int] = arrayOfPositives ++ arrayOfNegatives
+  val finalArray = arrayOfPositives ++ arrayOfNegatives
 
   finalArray
 
 }
 
-sortArray(Array(-1, 2,3,4, -10, 0, -12))
+sortArray(Array(-1, 2, 3, 4, -10, 0, -12))
 sortArray(Array(-2, 8, 0, 4, -8, -1, 0, 9))
